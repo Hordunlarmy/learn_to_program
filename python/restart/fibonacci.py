@@ -7,7 +7,10 @@ def fibonacci(num):
         return (fibonacci(num - 1) + fibonacci(num - 2))
 
 
-print(fibonacci(1))
-print(fibonacci(3))
-print(fibonacci(5))
-print(fibonacci(7))
+fibValues = int(input("How many fibonacci values should be found: "))
+
+for i in range(1, fibValues):
+    value = fibonacci(i)
+    print(value)
+
+print("All Done")
