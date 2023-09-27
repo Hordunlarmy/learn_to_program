@@ -1,11 +1,18 @@
 def comp_str(argone, argtwo):
-    argone_rev = argone[::-1]
-    argtwo_rev = argtwo[::-1]
-    if (argone_rev.find(argtwo_rev) != -1):
-        print("True")
+    argone_rev = list(argone[::-1])
+    argtwo_rev = list(argtwo[::-1])
+
+    for char in argone_rev:
+        if argtwo_rev and char == argtwo_rev[0]:
+            argtwo_rev.pop(0)
+        else:
+            break
+
+    if argtwo_rev:
+        print(False)
     else:
-        print("False")
+        print(True)
 
 
-comp_str("deobaba", "deo")
+comp_str("deobaba", "baba")
 comp_str("deobaba", "bbaa")
